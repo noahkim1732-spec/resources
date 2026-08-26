@@ -1,306 +1,67 @@
-const categories = [
-  {
-    id: "financial-aid",
-    number: "01",
-    eyebrow: "Paying for college",
-    title: "Financial Aid & Money",
-    intro:
-      "Understand your options, meet important deadlines, and make a plan for your money.",
-    color: "blue",
-    resources: [
-      {
-        title: "How Financial Aid Works",
-        description:
-          "Learn the difference between grants, scholarships, work-study, and loans before you accept an aid offer.",
-        source: "Federal Student Aid",
-        type: "Official government source",
-        href: "https://studentaid.gov/understand-aid/how-aid-works",
-        time: "6 min",
-      },
-      {
-        title: "Complete the FAFSA",
-        description:
-          "Start or continue the official Free Application for Federal Student Aid and review current deadlines.",
-        source: "Federal Student Aid",
-        type: "Official application",
-        href: "https://studentaid.gov/h/apply-for-aid/fafsa",
-        time: "Start here",
-      },
-      {
-        title: "Find Scholarships",
-        description:
-          "Search for scholarships and learn how to apply without paying unnecessary fees.",
-        source: "Federal Student Aid",
-        type: "Official government source",
-        href: "https://studentaid.gov/understand-aid/types/scholarships",
-        time: "5 min",
-      },
-      {
-        title: "Manage Your College Money",
-        description:
-          "Choose a bank account, avoid surprise fees, and safely manage a financial-aid refund.",
-        source: "Consumer Financial Protection Bureau",
-        type: "Official government source",
-        href: "https://www.consumerfinance.gov/consumer-tools/student-loans/manage-your-college-money/",
-        time: "7 min",
-      },
-    ],
-  },
-  {
-    id: "academic-success",
-    number: "02",
-    eyebrow: "Doing well in class",
-    title: "Academic Success",
-    intro:
-      "Build the habits and support system you need to feel confident in college-level classes.",
-    color: "green",
-    resources: [
-      {
-        title: "Using Office Hours",
-        description:
-          "See what office hours are for, how to prepare, and why asking your professor for help is a normal part of college.",
-        source: "Notre Dame Learning",
-        type: "University resource",
-        href: "https://learning.nd.edu/news/uplifting-first-generation-undergraduates-practical-strategies-in-small-classes-and-large-lectures/",
-        time: "5 min",
-      },
-      {
-        title: "Study Smarter",
-        description:
-          "Find practical guidance on study plans, reading comprehension, procrastination, and preparing for exams.",
-        source: "UNC Learning Center",
-        type: "University resource",
-        href: "https://learningcenter.unc.edu/tips-and-tools/how-to-succeed/",
-        time: "Resource hub",
-      },
-      {
-        title: "Academic Planning Worksheets",
-        description:
-          "Use free worksheets to organize your semester, manage your time, set goals, and reflect on your progress.",
-        source: "UNC Learning Center",
-        type: "University resource",
-        href: "https://learningcenter.unc.edu/tips-and-tools/coaching-tools/",
-        time: "Free tools",
-      },
-      {
-        title: "Writing Help",
-        description:
-          "Get help with planning essays, citations, grammar, avoiding plagiarism, and writing for different classes.",
-        source: "Purdue OWL",
-        type: "University resource",
-        href: "https://owl.purdue.edu/",
-        time: "Resource hub",
-      },
-    ],
-  },
-  {
-    id: "campus-life",
-    number: "03",
-    eyebrow: "Finding your place",
-    title: "Campus Life & Well-Being",
-    intro:
-      "Learn the unwritten rules, connect with people, and find support when college feels overwhelming.",
-    color: "orange",
-    resources: [
-      {
-        title: "Find Your Campus Support",
-        description:
-          "Search your school’s site for counseling, health services, food assistance, disability services, tutoring, and emergency aid.",
-        source: "Your college or university",
-        type: "Campus-specific",
-        href: "https://www.google.com/search?q=college+student+support+services",
-        time: "Quick search",
-      },
-      {
-        title: "Find Student Organizations",
-        description:
-          "Explore clubs, cultural organizations, service groups, recreation, and student events available at your school.",
-        source: "Your college or university",
-        type: "Campus-specific",
-        href: "https://www.google.com/search?q=college+student+organizations+clubs",
-        time: "Quick search",
-      },
-      {
-        title: "Mental Health in College",
-        description:
-          "Learn how to recognize common mental-health concerns, support a friend, and find help on campus.",
-        source: "Active Minds",
-        type: "Student well-being resource",
-        href: "https://www.activeminds.org/about-mental-health/",
-        time: "5 min",
-      },
-      {
-        title: "Decode College Vocabulary",
-        description:
-          "Look up unfamiliar terms like credit hour, registrar, prerequisite, academic standing, and add/drop period.",
-        source: "Federal Student Aid",
-        type: "Official glossary",
-        href: "https://studentaid.gov/help-center/answers/topic/glossary/articles",
-        time: "Reference",
-      },
-    ],
-  },
-  {
-    id: "first-generation",
-    number: "04",
-    eyebrow: "Navigating college",
-    title: "First-Generation Students",
-    intro:
-      "Find community and learn how to navigate college when your family has not experienced it before.",
-    color: "teal",
-    resources: [
-      {
-        title: "First-Gen Resource Hub",
-        description:
-          "Explore guides, research, events, and programs created for first-generation college students.",
-        source: "Center for First-generation Student Success",
-        type: "National resource",
-        href: "https://firstgen.naspa.org/",
-        time: "Resource hub",
-      },
-      {
-        title: "Understanding the Hidden Curriculum",
-        description:
-          "Learn about the unwritten academic and social expectations that can make college confusing at first.",
-        source: "Notre Dame Learning",
-        type: "University resource",
-        href: "https://learning.nd.edu/news/uplifting-first-generation-undergraduates-practical-strategies-in-small-classes-and-large-lectures/",
-        time: "6 min",
-      },
-      {
-        title: "Find a First-Gen Program",
-        description:
-          "Search your college’s website for a first-gen center, mentoring program, student organization, or celebration.",
-        source: "Your college or university",
-        type: "Campus-specific",
-        href: "https://www.google.com/search?q=college+first-generation+student+programs",
-        time: "Quick search",
-      },
-      {
-        title: "First in the Family Resources",
-        description:
-          "Read student-focused advice about applying to college, paying for it, and succeeding after you enroll.",
-        source: "I’m First!",
-        type: "Student resource",
-        href: "https://imfirst.org/",
-        time: "Resource hub",
-      },
-    ],
-  },
-  {
-    id: "career-preparation",
-    number: "05",
-    eyebrow: "Preparing for what comes next",
-    title: "Career Preparation",
-    intro:
-      "Turn your classes and experiences into a strong résumé, professional network, and career plan.",
-    color: "purple",
-    resources: [
-      {
-        title: "Build Your Résumé",
-        description:
-          "Learn what to include, choose a format, and describe school projects, volunteering, clubs, and work experience.",
-        source: "CareerOneStop",
-        type: "U.S. Department of Labor partner",
-        href: "https://www.careeronestop.org/JobSearch/Resumes/resumes.aspx",
-        time: "10 min",
-      },
-      {
-        title: "Résumé Writing Examples",
-        description:
-          "Review résumé sections, action verbs, formatting guidance, and examples for different situations.",
-        source: "Purdue OWL",
-        type: "University resource",
-        href: "https://owl.purdue.edu/owl/job_search_writing/resumes_and_vitas/index.html",
-        time: "Resource hub",
-      },
-      {
-        title: "Search for Opportunities",
-        description:
-          "Explore occupations, prepare applications, and organize a search for internships or entry-level work.",
-        source: "CareerOneStop",
-        type: "U.S. Department of Labor partner",
-        href: "https://www.careeronestop.org/JobSearch/job-search.aspx",
-        time: "Start here",
-      },
-      {
-        title: "Understand Career Readiness",
-        description:
-          "Discover the communication, teamwork, technology, leadership, and career-management skills employers value.",
-        source: "NACE",
-        type: "Career education resource",
-        href: "https://www.naceweb.org/career-readiness/competencies/career-readiness-defined/",
-        time: "6 min",
-      },
-    ],
-  },
+"use client";
+
+import { useEffect, useState } from "react";
+
+type Resource = { title: string; description: string; source: string; type: string; href: string; time: string };
+type Category = { id: string; number: string; eyebrow: string; title: string; short: string; intro: string; color: string; resources: Resource[] };
+
+const categories: Category[] = [
+  { id:"financial-aid", number:"01", eyebrow:"Paying for college", title:"Financial Aid & Money", short:"Financial Aid", intro:"Understand aid, meet deadlines, compare offers, and make a realistic plan for college costs.", color:"blue", resources:[
+    {title:"How Financial Aid Works",description:"Understand grants, scholarships, work-study, and loans before accepting an aid offer.",source:"Federal Student Aid",type:"Official guide",href:"https://studentaid.gov/understand-aid/how-aid-works",time:"6 min"},
+    {title:"Complete the FAFSA",description:"Start or continue the official federal student-aid application and check current deadlines.",source:"Federal Student Aid",type:"Official application",href:"https://studentaid.gov/h/apply-for-aid/fafsa",time:"Start here"},
+    {title:"Compare Aid Offers",description:"Compare net price, grants, work-study, and borrowing—not just the largest headline award.",source:"Consumer Financial Protection Bureau",type:"Comparison tool",href:"https://www.consumerfinance.gov/paying-for-college/compare-financial-aid-and-college-cost/",time:"Free tool"},
+    {title:"Search for Scholarships",description:"Learn where to find scholarships and how to avoid scholarship scams and unnecessary fees.",source:"Federal Student Aid",type:"Official guide",href:"https://studentaid.gov/understand-aid/types/scholarships",time:"5 min"},
+    {title:"Understand Student Loans",description:"Review federal loan types, interest, repayment responsibilities, and how much to borrow.",source:"Federal Student Aid",type:"Official guide",href:"https://studentaid.gov/understand-aid/types/loans",time:"8 min"},
+    {title:"Build a College Budget",description:"Plan for tuition, housing, food, books, transportation, and expenses that are easy to overlook.",source:"Consumer Financial Protection Bureau",type:"Money guide",href:"https://www.consumerfinance.gov/consumer-tools/student-loans/manage-your-college-money/",time:"7 min"}]},
+  { id:"academic-success", number:"02", eyebrow:"Doing well in class", title:"Academic Success", short:"Academics", intro:"Use proven study strategies, plan your time, improve your writing, and know when to ask for help.", color:"green", resources:[
+    {title:"Use the Study Cycle",description:"Turn previewing, class attendance, review, focused study, and self-checking into a repeatable routine.",source:"UNC Learning Center",type:"University guide",href:"https://learningcenter.unc.edu/tips-and-tools/the-study-cycle/",time:"6 min"},
+    {title:"Plan Your Semester",description:"Download practical worksheets for weekly planning, goal setting, time management, and reflection.",source:"UNC Learning Center",type:"Free tools",href:"https://learningcenter.unc.edu/tips-and-tools/coaching-tools/",time:"Worksheets"},
+    {title:"Prepare for Tests",description:"Create a test-day plan that covers sleep, materials, pacing, anxiety, and how to approach questions.",source:"UNC Learning Center",type:"University guide",href:"https://learningcenter.unc.edu/tips-and-tools/test-day-game-plan/",time:"5 min"},
+    {title:"Get Writing Help",description:"Find guidance for brainstorming, drafting, citations, grammar, research, and avoiding plagiarism.",source:"Purdue OWL",type:"Writing hub",href:"https://owl.purdue.edu/",time:"Reference"},
+    {title:"Learn to Use Office Hours",description:"See how to prepare questions, introduce yourself, and build a useful relationship with a professor.",source:"Notre Dame Learning",type:"University guide",href:"https://learning.nd.edu/news/uplifting-first-generation-undergraduates-practical-strategies-in-small-classes-and-large-lectures/",time:"5 min"},
+    {title:"Find Free Tutoring",description:"Search your school for tutoring, supplemental instruction, writing support, and peer-led study groups.",source:"Your college",type:"Campus-specific",href:"https://www.google.com/search?q=site%3A.edu+college+tutoring+academic+support+center",time:"Quick search"}]},
+  { id:"campus-life", number:"03", eyebrow:"Finding your place", title:"Campus Life & Well-Being", short:"Campus Life", intro:"Build community, care for your health, and quickly find support when college feels overwhelming.", color:"orange", resources:[
+    {title:"Find Campus Support",description:"Locate counseling, health services, emergency aid, food assistance, disability services, and tutoring.",source:"Your college",type:"Campus-specific",href:"https://www.google.com/search?q=site%3A.edu+student+support+services+counseling+emergency+aid",time:"Quick search"},
+    {title:"Explore Student Organizations",description:"Find clubs, cultural groups, service organizations, recreation, and events at your school.",source:"Your college",type:"Campus-specific",href:"https://www.google.com/search?q=site%3A.edu+student+organizations+clubs",time:"Quick search"},
+    {title:"Mental Health Basics",description:"Recognize common concerns, learn how to support a friend, and understand when to seek help.",source:"Active Minds",type:"Well-being guide",href:"https://www.activeminds.org/about-mental-health/",time:"5 min"},
+    {title:"Find Immediate Support",description:"Call, text, or chat with trained crisis counselors if you or someone else needs urgent emotional support.",source:"988 Lifeline",type:"24/7 support",href:"https://988lifeline.org/",time:"Immediate"},
+    {title:"Access Basic-Needs Help",description:"Find local food, housing, health, transportation, and financial-assistance programs by ZIP code.",source:"Findhelp",type:"Search tool",href:"https://www.findhelp.org/",time:"Free tool"},
+    {title:"Understand Accessibility",description:"Learn about accommodations and how disability-access offices can support equal access in college.",source:"U.S. Department of Education",type:"Official guide",href:"https://www2.ed.gov/about/offices/list/ocr/transition.html",time:"Reference"}]},
+  { id:"first-generation", number:"04", eyebrow:"Navigating college", title:"First-Generation Students", short:"First-Gen", intro:"Decode the hidden curriculum, find community, and use support built for students navigating college first.", color:"teal", resources:[
+    {title:"First-Gen Resource Hub",description:"Explore guides, research, programs, and events created for first-generation college students.",source:"FirstGen Forward",type:"National resource",href:"https://firstgen.naspa.org/",time:"Resource hub"},
+    {title:"Understand the Hidden Curriculum",description:"Learn the unwritten academic and social expectations that can make college confusing at first.",source:"Notre Dame Learning",type:"University guide",href:"https://learning.nd.edu/news/uplifting-first-generation-undergraduates-practical-strategies-in-small-classes-and-large-lectures/",time:"6 min"},
+    {title:"Find TRIO Student Support",description:"Learn about federally funded programs offering tutoring, advising, mentoring, and financial guidance.",source:"U.S. Department of Education",type:"Federal program",href:"https://www.ed.gov/grants-and-programs/grants-higher-education/trio/student-support-services-program",time:"Program finder"},
+    {title:"Find a Campus First-Gen Program",description:"Search your school for a first-gen center, peer mentor, student group, or special advising program.",source:"Your college",type:"Campus-specific",href:"https://www.google.com/search?q=site%3A.edu+first-generation+student+program",time:"Quick search"},
+    {title:"Learn College Vocabulary",description:"Look up unfamiliar financial-aid and enrollment terms so campus conversations make more sense.",source:"Federal Student Aid",type:"Official glossary",href:"https://studentaid.gov/help-center/answers/topic/glossary/articles",time:"Reference"},
+    {title:"Connect With First-Gen Community",description:"Find national First-Generation College Celebration events and ideas for connecting on campus.",source:"FirstGen Forward",type:"Community resource",href:"https://firstgen.naspa.org/engagement/first-generation-college-celebration",time:"Explore"}]},
+  { id:"career-preparation", number:"05", eyebrow:"Preparing for what comes next", title:"Career Preparation", short:"Careers", intro:"Explore careers, build application materials, find experience, and develop the skills employers value.", color:"purple", resources:[
+    {title:"Explore Careers",description:"Compare occupations by tasks, education, salary, outlook, and skills to find paths worth exploring.",source:"My Next Move",type:"Career explorer",href:"https://www.mynextmove.org/",time:"Free tool"},
+    {title:"Build Your Résumé",description:"Choose a format and describe projects, volunteering, clubs, coursework, and work experience clearly.",source:"CareerOneStop",type:"Government partner",href:"https://www.careeronestop.org/JobSearch/Resumes/resumes.aspx",time:"10 min"},
+    {title:"Use Résumé Examples",description:"Review sections, action verbs, formatting guidance, and sample résumés for different situations.",source:"Purdue OWL",type:"University resource",href:"https://owl.purdue.edu/owl/job_search_writing/resumes_and_vitas/index.html",time:"Examples"},
+    {title:"Find an Internship",description:"Learn where internships appear, how to evaluate them, and how an internship can build career experience.",source:"CareerOneStop",type:"Career guide",href:"https://www.careeronestop.org/FindTraining/Types/internships.aspx",time:"Start here"},
+    {title:"Practice Interviewing",description:"Prepare stories and answers, research employers, and learn what to do before and after an interview.",source:"CareerOneStop",type:"Career guide",href:"https://www.careeronestop.org/JobSearch/Interview/interview-and-negotiate.aspx",time:"8 min"},
+    {title:"Know Career-Ready Skills",description:"Review the communication, teamwork, technology, leadership, and self-development skills employers value.",source:"NACE",type:"Career framework",href:"https://www.naceweb.org/career-readiness/competencies/career-readiness-defined/",time:"6 min"}]},
+  { id:"student-stories", number:"06", eyebrow:"Advice from people who lived it", title:"College Student Stories", short:"Student Stories", intro:"Read honest anecdotes from students about belonging, asking for help, choosing a path, and adjusting to college.", color:"rose", resources:[
+    {title:"First-Gen Stories at Michigan",description:"Read dozens of short student and alumni accounts about belonging, mentors, asking questions, and taking risks.",source:"University of Michigan",type:"Student anecdotes",href:"https://firstgen.umich.edu/our-stories/",time:"Story collection"},
+    {title:"#UMNFirst Stories",description:"Hear first-generation students describe their journeys, challenges, accomplishments, and campus communities.",source:"University of Minnesota",type:"Student anecdotes",href:"https://firstgen.umn.edu/resources/umnfirst-stories",time:"Story collection"},
+    {title:"First-Gen Voices",description:"Explore personal perspectives and student-focused stories from a national first-generation community.",source:"FirstGen Forward",type:"Student perspectives",href:"https://firstgen.naspa.org/why-first-gen/students",time:"Story hub"},
+    {title:"College Stories and Advice",description:"Browse student-created reflections about applying, paying for college, adjusting, and succeeding.",source:"I’m First!",type:"Student community",href:"https://imfirst.org/",time:"Story hub"},
+    {title:"Student Mental-Health Stories",description:"Read personal stories that make common college mental-health experiences feel less isolating.",source:"Active Minds",type:"Personal stories",href:"https://www.activeminds.org/blog/",time:"Article collection"},
+    {title:"Share Your Own Story",description:"Use Michigan’s prompts as inspiration to record a short college anecdote and advice for the next student.",source:"University of Michigan",type:"Reflection prompt",href:"https://firstgen.umich.edu/our-stories/",time:"Contribute"}]}
 ];
 
 export default function Home() {
-  return (
-    <main>
-      <header className="page-intro" id="top">
-        <p className="kicker">College student guide</p>
-        <h1>Resources</h1>
-        <p>
-          Trusted tools and straightforward guidance for paying for college,
-          succeeding in class, finding support, and preparing for your career.
-        </p>
-      </header>
-
-      <section className="quick-nav" aria-label="Resource categories">
-        <p>Jump to a topic</p>
-        <div>
-          {categories.map((category) => (
-            <a key={category.id} href={`#${category.id}`}>
-              <span>{category.number}</span>
-              {category.title}
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section className="resources">
-        {categories.map((category) => (
-          <section
-            className={`category category-${category.color}`}
-            id={category.id}
-            key={category.id}
-          >
-            <div className="category-heading">
-              <span className="category-number">{category.number}</span>
-              <div>
-                <p>{category.eyebrow}</p>
-                <h2>{category.title}</h2>
-                <span>{category.intro}</span>
-              </div>
-            </div>
-            <div className="card-grid">
-              {category.resources.map((resource) => (
-                <a
-                  className="resource-card"
-                  href={resource.href}
-                  key={resource.title}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className="card-topline">
-                    <span>{resource.type}</span>
-                    <span>{resource.time}</span>
-                  </div>
-                  <h3>{resource.title}</h3>
-                  <p>{resource.description}</p>
-                  <div className="card-footer">
-                    <span>{resource.source}</span>
-                    <b aria-hidden="true">↗</b>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </section>
-        ))}
-      </section>
-
-    </main>
-  );
+  const [active, setActive] = useState(categories[0].id);
+  useEffect(() => { const id = window.location.hash.slice(1); if (categories.some(c => c.id === id)) setActive(id); }, []);
+  const select = (id: string) => { setActive(id); history.replaceState(null, "", `#${id}`); };
+  const category = categories.find(c => c.id === active)!;
+  return <main>
+    <header className="page-intro"><p className="kicker">College student guide</p><div className="intro-row"><div><h1>Resources</h1><p>Trusted tools, practical guidance, and real student perspectives for every stage of college.</p></div><div className="resource-count"><strong>{categories.reduce((n,c)=>n+c.resources.length,0)}</strong><span>curated resources</span></div></div></header>
+    <nav className="tab-bar" aria-label="Resource categories"><div role="tablist">{categories.map(c=><button key={c.id} role="tab" aria-selected={active===c.id} aria-controls="resource-panel" onClick={()=>select(c.id)}><span>{c.number}</span>{c.short}</button>)}</div></nav>
+    <section id="resource-panel" role="tabpanel" className={`category category-${category.color}`}>
+      <div className="category-heading"><span className="category-number">{category.number}</span><div><p>{category.eyebrow}</p><h2>{category.title}</h2><span>{category.intro}</span><em>{category.resources.length} resources</em></div></div>
+      <div className="card-grid">{category.resources.map(r=><a className="resource-card" href={r.href} key={r.title} target="_blank" rel="noreferrer"><div className="card-topline"><span>{r.type}</span><span>{r.time}</span></div><h3>{r.title}</h3><p>{r.description}</p><div className="card-footer"><span>{r.source}</span><b aria-hidden="true">↗</b></div></a>)}</div>
+    </section>
+    <footer><p>Start with one resource. Save what helps. Come back when you need the next step.</p><a href="#financial-aid" onClick={()=>select("financial-aid")}>Back to the first tab ↑</a></footer>
+  </main>;
 }
